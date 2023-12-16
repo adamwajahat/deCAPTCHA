@@ -1,0 +1,115 @@
+#decaptcha-grid-container {
+    width: 400px;
+    height: 580px;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px;
+    grid-template-rows: 127px auto auto 60px;
+    /*position: absolute;*/
+    top: 650px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    z-index: 300;
+    display: grid;
+    background-color: #fff;
+    opacity: 1;
+}
+
+#decaptcha-row1{
+    background-color: #4a90e2;
+    margin: 7px 7px 6px;
+    height: 66px;
+    padding: 24px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    grid-row: 1;
+    text-align: left;
+}
+
+#decaptcha-identifier {
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+a, p{
+    margin: 0;
+}
+
+#decaptcha-type1{
+    display: inline;
+}
+
+#decaptcha-row2{
+    text-align: center;
+    padding: 0 7px;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 126px 126px 126px;
+    grid-template-columns: 126px 126px 126px;
+    grid-gap: 4px;
+}
+
+.decaptcha-img {
+    height: 126px;
+    width: 126px;
+    background-repeat: no-repeat;
+}
+
+#decaptcha-row3{
+    grid-row: 4;
+    border-top: 1px solid #dfdfdf;
+    height: 60px;
+    width: 98.5%;
+    display: table;
+    vertical-align: middle;
+    padding-right: 1.5%;
+    padding-top: 1.5%;
+}
+
+#verify-button{
+    float: right;
+    background-color: #4a90e2;
+    display: table-cell;
+    vertical-align: middle;
+    border: 0px;
+    border-radius: 2px;
+    font-family: sans-serif;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 2px;
+    margin-right: 2px;
+    font-size: 14px;
+    color: #fff;
+    min-width: 100px;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+.row3icon {
+    height: 32px;
+    width: 32px;
+    margin: 8px;
+    line-height: 60px;
+    opacity: 0.55;
+    display: table-cell;
+    float: left;
+    cursor: pointer;
+  }
+
+.row3icon :hover {
+    opacity: 1;
+}
+
+#feedback-msg{
+    color: #d14836;
+    font-family: sans-serif;
+    font-size: 14px;
+    display: none;
+    text-align: center;
+    width: 100%;
+    padding: 7px 0;
+    grid-row: 3;
+}
