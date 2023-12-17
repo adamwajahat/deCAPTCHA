@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react'
 import DeCAPTCHA from './DeCAPTCHA';
 import captchaTest from './assets/imgs/captcha_template.png'
 import img0 from './assets/imgs/(31.3015121,34.2404834)_square0.png'
@@ -13,6 +14,7 @@ import img8 from './assets/imgs/(31.3015121,34.2404834)_square8.png'
 import audio0 from './assets/audio_test.mp3'
 
 function App() {
+  const [captchaView, setCaptchaView] = useState({display: 'flex'});
   const myArrayOfObjects = 
   [
       {
@@ -29,10 +31,14 @@ function App() {
       },
   ]
 
+  const onCorrect = () => {
+    setCaptchaView({display: 'none'})
+  }
+
   return (
     <div className="App">
-      <div className='wrapper'>
-        <DeCAPTCHA objOfQuizzes={myArrayOfObjects} infoLink='https://www.google.com/' audioLink={audio0}/>
+      <div className='wrapper' style={captchaView}>
+        <DeCAPTCHA objOfQuizzes={myArrayOfObjects} infoLink='https://www.google.com/' audioLink={audio0} onCaptchaCorrect={onCorrect}/>
       </div>
     </div>
   );

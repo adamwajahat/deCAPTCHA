@@ -4,7 +4,7 @@ import refresh from './assets/imgs/refresh.png'
 import audio from './assets/imgs/audio.png'
 import info from './assets/imgs/info.png'
 
-function DeCAPTCHA({objOfQuizzes, audioLink, infoLink}) {
+function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   const [captchaIndex, setCaptchaIndex] = useState(0);
   const [clickedImgDiv, setClickedImgDiv] = useState([]);
   const [showIncorrectDivStyle, setShowIncorrectDivStyle] = useState({display: 'none'});
@@ -47,6 +47,7 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink}) {
     else{
       // call the function to close the pop up
       console.log("It was correct")
+      return onCaptchaCorrect()
     }
   }
 
