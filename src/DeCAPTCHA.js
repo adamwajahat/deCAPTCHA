@@ -36,12 +36,21 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
     setClickedImgDiv([])
     if(yes){
       setCaptchaIndex(prevIndex => {
-        if(prevIndex === objOfQuizzes.length - 1){
-          return 0;
-        }
-        else{
-          return prevIndex + 1;
-        }
+          const randomIndex = Math.floor(Math.random() * 27)
+          if(randomIndex === prevIndex){
+            if(prevIndex === objOfQuizzes.length - 1){
+              console.log("Index is " + 0)
+              return 0;
+            }
+            else{
+              console.log("Index is " + prevIndex + 1)
+              return prevIndex + 1
+            }
+          }
+          else{
+            console.log("Index is " + randomIndex)
+            return randomIndex
+          }
       });
     }
     else{
@@ -54,7 +63,7 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   useEffect(() => {
     setNewCaptcha(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [objOfQuizzes]);
+  }, []);
 
   const handleCaptchaClick = (id) => {
     const index = clickedImgDiv.indexOf(id);
@@ -125,15 +134,16 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
             id={"img"+id}
             src={objOfQuizzes[captchaIndex].images[id]}
             style={getImgDivStyle(id)}
-            onClick={() => handleCaptchaClick(id)}>
+            onClick={() => handleCaptchaClick(id)}
+            alt={"img"+id}>
             </img>
         ))}
       </div>
       <div class="decaptcha" id="feedback-msg" style={showIncorrectDivStyle}>{showIncorrectText && 'Please try again'}</div>
       <div class="decaptcha" id="decaptcha-row3">
-        <img class="decaptcha row3icon" id="refresh" src={refresh} onClick={refreshCaptcha}></img>
-        <img class="decaptcha row3icon" id="audio" src={audio} onClick={playAudio}></img>
-        <img class="decaptcha row3icon" id="info" src={info} onClick={redirectInfo}></img>
+        <img class="decaptcha row3icon" id="refresh" src={refresh} onClick={refreshCaptcha} alt='refreshIcon'></img>
+        <img class="decaptcha row3icon" id="audio" src={audio} onClick={playAudio} alt='audioIcon'></img>
+        <img class="decaptcha row3icon" id="info" src={info} onClick={redirectInfo} alt='infoIcon'></img>
         <button onClick={verifyCaptcha} class="decaptcha button" id="verify-button" type="button">VERIFY</button>
       </div>
     </div>
