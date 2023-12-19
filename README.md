@@ -1,5 +1,5 @@
 # deCAPTCHA
-An parametrized clone of Google reCAPTCHA's v2 bot protection as a React component.
+A parametrized clone of Google reCAPTCHA's v2 bot protection as a React component.
 
 ## Demo + Behavior
 This project was made apart of a project called 'deCAPTCHA, Gaza'. This project sourced over images from over 45 locations across the Gaza strip. The following project can be viewed at the following.
