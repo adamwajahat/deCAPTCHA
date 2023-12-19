@@ -11,6 +11,7 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   const [showIncorrectCaptchaHeight, setShowIncorrectCaptchaHeight] = useState({height: '580px'})
   const [showIncorrectText, setShowIncorrectText] = useState(false);
   const imgDivIds = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  const objOfQuizzesLength = objOfQuizzes.length
 
   const verifyCaptcha = () =>{
     if(clickedImgDiv.length !== objOfQuizzes[captchaIndex].answers.length){
@@ -36,9 +37,9 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
     setClickedImgDiv([])
     if(yes){
       setCaptchaIndex(prevIndex => {
-          const randomIndex = Math.floor(Math.random() * 27)
+          const randomIndex = Math.floor(Math.random() * objOfQuizzesLength)
           if(randomIndex === prevIndex){
-            if(prevIndex === objOfQuizzes.length - 1){
+            if(prevIndex === objOfQuizzesLength - 1){
               console.log("Index is " + 0)
               return 0;
             }
