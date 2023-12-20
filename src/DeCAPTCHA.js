@@ -10,8 +10,10 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   const [showIncorrectDivStyle, setShowIncorrectDivStyle] = useState({display: 'none'});
   const [showIncorrectCaptchaHeight, setShowIncorrectCaptchaHeight] = useState({height: '580px'})
   const [showIncorrectText, setShowIncorrectText] = useState(false);
-  const imgDivIds = [0, 1, 2, 3, 4, 5, 6, 7, 8]
   const objOfQuizzesLength = objOfQuizzes.length
+  const [captchasLeft, setCaptchasLeft] = useState(Array.from({ length: objOfQuizzesLength }, (_, index) => index))
+  const imgDivIds = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  
 
   const verifyCaptcha = () =>{
     if(clickedImgDiv.length !== objOfQuizzes[captchaIndex].answers.length){
@@ -37,21 +39,20 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
     setClickedImgDiv([])
     if(yes){
       setCaptchaIndex(prevIndex => {
-          const randomIndex = Math.floor(Math.random() * objOfQuizzesLength)
-          if(randomIndex === prevIndex){
-            if(prevIndex === objOfQuizzesLength - 1){
-              console.log("Index is " + 0)
-              return 0;
-            }
-            else{
-              console.log("Index is " + prevIndex + 1)
-              return prevIndex + 1
-            }
+          console.log("Last array length is " + captchasLeft)
+          if(captchasLeft.length === 1){
+            const tempIndex = captchasLeft[0]
+            console.log("Index is " + 0)
+            const indexesArray = Array.from({ length: objOfQuizzes.length }, (_, index) => index)
+            setCaptchasLeft(indexesArray)
+            return tempIndex
           }
-          else{
-            console.log("Index is " + randomIndex)
-            return randomIndex
-          }
+          const randomIndex = Math.floor(Math.random() * captchasLeft.length)
+          console.log("Index is " + randomIndex)
+          const newClickedImgDiv = [...captchasLeft];
+          newClickedImgDiv.splice(randomIndex, 1)
+          setCaptchasLeft(newClickedImgDiv)
+          return captchasLeft[randomIndex]
       });
     }
     else{

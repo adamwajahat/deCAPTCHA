@@ -6,7 +6,7 @@ This project was made a part of a project called 'deCAPTCHA, Gaza'. This project
 
 [Please head over to "Work" and find "deCAPTCHA, Gaza"](https://adamwajahat.github.io)
 
-In its current behavior, deCAPTCHA will show the users the passed-in captchas objects in a random order. When the user gets a captcha wrong, it re-renders with another captcha from the set. It is currently set to one correct captcha before the callback function is called.
+In its current behavior, deCAPTCHA will show the users the passed-in captchas objects in a random order and will not repeat the same captcha until the user has seen all of them. When the user gets a captcha wrong, it re-renders with another captcha from the set. It is currently set to one correct captcha before the callback function is called.
 
 ## How to
 First, place DeCaptcha.js and DeCaptcha.css files into your project directory. Ensure they are on the same level.
