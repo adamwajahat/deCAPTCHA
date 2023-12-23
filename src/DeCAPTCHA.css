@@ -1,6 +1,6 @@
 #decaptcha-grid-container {
     width: 400px;
-    height: auto;
+    height: 580px;
     border: 1px solid rgb(204, 204, 204);
     box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px;
     grid-template-rows: 127px auto auto 60px;
@@ -116,7 +116,7 @@ a, p{
 
 @media only screen and (max-width: 410px) {
     #decaptcha-grid-container {
-        height: auto;
+        height: 520px;
         width: 350px;
         grid-template-rows: 119px auto auto 60px;
     }
