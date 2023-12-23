@@ -2,9 +2,9 @@
 A parameterized clone of Google reCAPTCHA's v2 bot protection as a React component.
 
 ## Demo + Behavior
-This project was made a part of a project called 'deCAPTCHA, Gaza'. This project sourced images from over 45 locations across the Gaza Strip. The following project can be viewed at the following.
+This project was made a part of a project called <i>somewhere in Gaza</i> (2023). This project sourced images from over 45 locations across the Gaza Strip. The following project can be viewed at the following.
 
-[Please head over to "Work" and find "deCAPTCHA, Gaza"](https://adamwajahat.github.io)
+[somewhere in Gaza (2023)](https://somewhereingaza.github.io/)
 
 In its current behavior, deCAPTCHA will show the users the passed-in captchas objects in a random order and will not repeat the same captcha until the user has seen all of them. When the user gets a captcha wrong, it re-renders with another captcha from the set. It is currently set to one correct captcha before the callback function is called.
 

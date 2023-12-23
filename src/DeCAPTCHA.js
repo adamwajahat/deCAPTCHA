@@ -8,7 +8,8 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   const [captchaIndex, setCaptchaIndex] = useState(0);
   const [clickedImgDiv, setClickedImgDiv] = useState([]);
   const [showIncorrectDivStyle, setShowIncorrectDivStyle] = useState({display: 'none'});
-  const [showIncorrectCaptchaHeight, setShowIncorrectCaptchaHeight] = useState({height: '580px'})
+  const initialHeight = window.innerHeight <= 410 ? '520px' : '580px;'
+  const [showIncorrectCaptchaHeight, setShowIncorrectCaptchaHeight] = useState({height: initialHeight})
   const [showIncorrectText, setShowIncorrectText] = useState(false);
   const objOfQuizzesLength = objOfQuizzes.length
   const [captchasLeft, setCaptchasLeft] = useState(Array.from({ length: objOfQuizzesLength }, (_, index) => index))
@@ -93,15 +94,27 @@ function DeCAPTCHA({objOfQuizzes, audioLink, infoLink, onCaptchaCorrect}) {
   }
 
   const setIncorrectMessage = (yes) => {
+    const screenHeight = window.innerHeight
     if(yes){
       setShowIncorrectText(true);
       setShowIncorrectDivStyle({display: 'block'})
-      setShowIncorrectCaptchaHeight({height: '610px'})
+      if(screenHeight <= 410){
+        setShowIncorrectCaptchaHeight({height: '550px'})
+      }
+      else{
+        setShowIncorrectCaptchaHeight({height: 'auto'})
+      }
     }
     else{
       setShowIncorrectText(false);
       setShowIncorrectDivStyle({display: 'none'})
-      setShowIncorrectCaptchaHeight({height: '580px'})
+      console.log("The screen height is" + screenHeight)
+      if(screenHeight <= 410){
+        setShowIncorrectCaptchaHeight({height: '520px'})
+      }
+      else{
+        setShowIncorrectCaptchaHeight({height: '580px'})
+      }
     }
   }
 
