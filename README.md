@@ -2,7 +2,7 @@
 A parameterized clone of Google reCAPTCHA's v2 bot protection as a React component.
 
 ## Demo + Behavior
-This project was made a part of a project called <i>somewhere in Gaza</i> (2023). This project sourced images from over 45 locations across the Gaza Strip. The following project can be viewed at the following.
+This component was made a part of a project called <i>somewhere in Gaza</i> (2023). This project sourced images from over 45 locations across the Gaza Strip. The following project can be viewed at the following.
 
 [somewhere in Gaza (2023)](https://somewhereingaza.github.io/)
 
