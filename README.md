@@ -67,4 +67,4 @@ Normally ```onCaptchaCorrect``` is used to call a function to hide the component
 ## Credits
 Alhamdulillah. Allah showed me the means through different ways. 
 
-A starting point was jvanam's [captcha](https://github.com/jvanam/captcha/tree/master) (2020) net-art site that set a lot of the CSS I used. I essentially rewrote his functionality in React and tried to make it more parametrized. 
+A starting point was jvanam's [captcha](https://github.com/jvanam/captcha/tree/master) (2020) net-art site that set a lot of the CSS I used. I essentially rewrote her functionality in React and tried to make it more parametrized. 
